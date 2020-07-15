@@ -9,7 +9,7 @@ export default function() {
     const utilities = _.fromPairs(
       _.map(theme('divideOpacity'), (value, modifier) => {
         return [
-          `.${e(`divide-opacity-${modifier}`)} > :not(template) ~ :not(template)`,
+          `.${e(`divide-opacity-${modifier}`)} > :not(template):not([hidden]) ~ :not(template):not([hidden])`,
           {
             '--divide-opacity': value,
           },
