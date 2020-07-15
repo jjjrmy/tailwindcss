@@ -25,7 +25,7 @@ export default function() {
     const utilities = _.fromPairs(
       _.map(_.omit(colors, 'default'), (value, modifier) => {
         return [
-          `.${e(`divide-${modifier}`)} > :not(template) ~ :not(template)`,
+          `.${e(`divide-${modifier}`)} > :not(template):not([hidden]) ~ :not(template):not([hidden])`,
           getProperties(value),
         ]
       })
